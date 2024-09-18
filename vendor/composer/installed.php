@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'drupal/recommended-project',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => null,
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
+        'reference' => '0d80ce936d3842a2e0f975ebfde5076a2a2a68ff',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -335,18 +335,18 @@
             ),
         ),
         'drupal/recommended-project' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => null,
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
+            'reference' => '0d80ce936d3842a2e0f975ebfde5076a2a2a68ff',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
         'drush/drush' => array(
-            'pretty_version' => '13.1.1',
-            'version' => '13.1.1.0',
-            'reference' => '79f5f32f2c3f2059b986a2504ace5f14369a359f',
+            'pretty_version' => '13.2.0',
+            'version' => '13.2.0.0',
+            'reference' => '6a3f0cfe0abab49f42e83602469049506d75035d',
             'type' => 'library',
             'install_path' => __DIR__ . '/../drush/drush',
             'aliases' => array(),
@@ -479,9 +479,9 @@
             'dev_requirement' => false,
         ),
         'nikic/php-parser' => array(
-            'pretty_version' => 'v5.1.0',
-            'version' => '5.1.0.0',
-            'reference' => '683130c2ff8c2739f4822ff7ac5c873ec529abd1',
+            'pretty_version' => 'v5.2.0',
+            'version' => '5.2.0.0',
+            'reference' => '23c79fbbfb725fb92af9bcf41065c8e9a0d49ddb',
             'type' => 'library',
             'install_path' => __DIR__ . '/../nikic/php-parser',
             'aliases' => array(),
@@ -577,8 +577,8 @@
         'psr/container-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.1|2.0',
-                1 => '^1.0',
+                0 => '^1.0',
+                1 => '1.1|2.0',
             ),
         ),
         'psr/event-dispatcher' => array(
