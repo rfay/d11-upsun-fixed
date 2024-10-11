@@ -861,6 +861,10 @@ if (getenv('IS_DDEV_PROJECT') == 'true' && file_exists(__DIR__ . '/settings.ddev
   include __DIR__ . '/settings.ddev.php';
 }
 
+if (getenv('PLATFORM_PROJECT_ENTROPY') != "") {
+  include __DIR__ . '/settings.upsun.php';
+}
+
 /**
  * Load local development override configuration, if available.
  *
