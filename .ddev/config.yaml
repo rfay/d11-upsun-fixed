@@ -9,14 +9,15 @@ additional_fqdns: []
 database:
     type: mariadb
     version: "10.11"
+hooks:
+    post-start:
+        - composer: install
 use_dns_when_possible: true
 composer_version: "2"
 web_environment:
+    - UPSUN_ENVIRONMENT=main
     - UPSUN_PROJECT=ctl6tr4scwt4s
 corepack_enable: true
-hooks:
-    post-start:
-    - composer: install
 
 # Key features of DDEV's config.yaml:
 
