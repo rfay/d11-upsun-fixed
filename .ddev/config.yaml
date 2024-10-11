@@ -14,6 +14,9 @@ composer_version: "2"
 web_environment:
     - UPSUN_PROJECT=ctl6tr4scwt4s
 corepack_enable: true
+hooks:
+    post-start:
+    - composer: install
 
 # Key features of DDEV's config.yaml:
 
