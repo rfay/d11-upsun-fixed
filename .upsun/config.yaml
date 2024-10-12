@@ -168,8 +168,7 @@ routes:
   "https://{default}/":
     type: upstream
     upstream: "d11:http"
-  # A basic redirect definition
-  # More information: https://docs.upsun.com/define-routes.html#basic-redirect-definition
-  "https://www.{default}":
-    type: redirect
-    to: "https://{default}/"
+    cache:
+      # Disable the HTTP cache on this route. It's handled by the CDN instead.
+      enabled: false
+
