@@ -165,7 +165,7 @@ services:
 # to be processed by Upsun.
 # More information: https://docs.upsun.com/define-routes.html
 routes:
-  "https://{default}/":
+  "https://{all}/":
     type: upstream
     upstream: "d11:http"
     cache:
