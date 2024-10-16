@@ -17,6 +17,8 @@ composer_version: "2"
 web_environment:
     - UPSUN_ENVIRONMENT=main
     - UPSUN_PROJECT=ctl6tr4scwt4s
+    - PLATFORM_ENVIRONMENT=main
+    - PLATFORM_PROJECT=ctl6tr4scwt4s
 corepack_enable: true
 
 # Key features of DDEV's config.yaml:
