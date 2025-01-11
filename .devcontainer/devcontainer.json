@@ -3,7 +3,9 @@
 {
 	"name": "d11",
 	// Or use a Dockerfile or Docker Compose file. More info: https://containers.dev/guide/dockerfile
-    "image": "ddev/ddev-gitpod-base:latest",
+   // THIS ONLY WORKS ON AMD64 machines, doesn't work on M1 mac because that image is not available
+   // for arm64. Maybe something like it should be...
+	"image": "ddev/ddev-gitpod-base:latest",
 	"features": {
 		"ghcr.io/ddev/ddev/install-ddev:latest": {}
 	},
