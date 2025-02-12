@@ -4,8 +4,12 @@
 	"name": "d11",
 	"image": "mcr.microsoft.com/devcontainers/go:dev-1.22",
 	"features": {
+		"docker-in-docker": "true",
 		"ghcr.io/ddev/ddev/install-ddev:latest": {}
 	},
+	"mounts": [
+		"source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+	],
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
 	// "features": {},
