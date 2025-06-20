@@ -20,7 +20,8 @@
         "drupal/core-dev": "^11.1",
         "drupal/core-project-message": "^11.0",
         "drupal/core-recommended": "^11.0",
-        "drupal/search_api_solr": "^4.3"
+        "drupal/search_api_solr": "^4.3",
+        "drush/drush": "^13.6"
     },
     "conflict": {
         "drupal/drupal": "*"
