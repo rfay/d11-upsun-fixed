@@ -2,3 +2,4 @@
 /vendor
 *storybook.log
 /node_modules
+/.ddev/.env
