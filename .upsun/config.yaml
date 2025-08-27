@@ -20,7 +20,7 @@ applications:
     # More information: https://docs.upsun.com/create-apps/app-reference.html#relationships
     relationships:
       mariadb:
-      
+
 
     # Mounts define directories that are writable after the build is complete.
     # More information: https://docs.upsun.com/create-apps/app-reference.html#mounts
@@ -73,8 +73,8 @@ applications:
         "/":
           passthru: "/index.php"
           root: "web"
-          
-        
+
+
 
     # Alternate copies of the application to run as background processes.
     # More information: https://docs.upsun.com/create-apps/app-reference.html#workers
@@ -92,7 +92,7 @@ applications:
     variables:
       env:
         N_PREFIX: "/app/.global"
-        
+
 
     # Outbound firewall rules for the application. More information: https://docs.upsun.com/create-apps/app-reference.html#firewall
     # firewall:
@@ -125,13 +125,13 @@ applications:
         n auto || n lts
         hash -r
         yarn
-        
+
       # The deploy hook is run after the app container has been started, but before it has started accepting requests.
       # More information: https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#deploy-hook
       deploy: |
         set -eux
         # echo 'Put your deploy command here'
-        
+
 
       # The post_deploy hook is run after the app container has been started and after it has started accepting requests.
       # More information: https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#deploy-hook
@@ -155,9 +155,9 @@ applications:
 # Full list of available services: https://docs.upsun.com/add-services.html#available-services
 services:
   mariadb:
-    type: mariadb:10.11 # All available versions are: 11.0, 10.11, 10.6, 10.5, 10.4, 10.3
+    type: mariadb:11.8
 
-  
+
 
 # The routes of the project.
 #
