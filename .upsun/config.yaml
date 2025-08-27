@@ -64,6 +64,7 @@ applications:
 
     relationships:
       mariadb: "mariadb:mysql"
+      redis: 'cache:redis'
 
     hooks:
       build: |
@@ -75,6 +76,19 @@ applications:
         cd web
         bash $PLATFORM_APP_DIR/drush/upsun_deploy_drupal.sh
 
+    crons:
+      # Run Drupal's cron tasks every 19 minutes.
+      drupal:
+        spec: '*/19 * * * *'
+        commands:
+          start: 'cd web ; drush core-cron'
+    runtime:
+      # Enable the redis extension so Drupal can communicate with the Redis cache.
+      extensions:
+        - redis
+        - sodium
+        - apcu
+        - blackfire
 
 
 
@@ -109,6 +123,8 @@ applications:
 services:
   mariadb:
     type: mariadb:11.8
+  cache:
+    type: redis:8.0
 
 
 
