@@ -21,6 +21,14 @@ applications:
     relationships:
       mariadb:
 
+    dependencies:
+      nodejs:
+        n: "*"
+        npx: "*"
+        yarn: "^1.22.0"
+      php:
+        composer/composer: "^2"
+
 
     # Mounts define directories that are writable after the build is complete.
     # More information: https://docs.upsun.com/create-apps/app-reference.html#mounts
@@ -102,36 +110,27 @@ applications:
     build:
       flavor: composer
 
-    # Installs global dependencies as part of the build process. They’re independent of your app’s dependencies and
-    # are available in the PATH during the build process and in the runtime environment. They’re installed before
-    # the build hook runs using a package manager for the language.
-    # More information: https://docs.upsun.com/create-apps/app-reference.html#dependencies
-    dependencies:
-      nodejs:
-        n: "*"
-        npx: "*"
-        yarn: "^1.22.0"
-      php:
-        composer/composer: "^2"
+      variables:
+        env:
+          N_PREFIX: "/app/.global"
 
-    # Hooks allow you to customize your code/environment as the project moves through the build and deploy stages
-    # More information: https://docs.upsun.com/create-apps/app-reference.html#hooks
-    hooks:
-      # The build hook is run after any build flavor.
-      # More information: https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#build-hook
-      build: |
-        set -eux
-        composer --no-ansi --no-interaction install --no-progress --prefer-dist --optimize-autoloader --no-dev
-        n auto || n lts
-        hash -r
-        yarn
-
-      # The deploy hook is run after the app container has been started, but before it has started accepting requests.
-      # More information: https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#deploy-hook
-      deploy: |
-        set -eux
-        # echo 'Put your deploy command here'
-
+      mounts:
+        "/web/sites/default/files": "shared:files/files"
+        "/tmp": "shared:files/tmp"
+        "/private": "shared:files/private"
+        "/.drush": "shared:files/drush"
+        "/drush-backups": "shared:files/drush-backups"
+      relationships:
+        mariadb: "mariadb:mysql"
+      hooks:
+        build: |
+          set -e
+          # fast.
+        deploy: |
+          set -e
+          php ./drush/upsun_generate_drush_yml.php
+          cd web
+          bash $PLATFORM_APP_DIR/drush/upsun_deploy_drupal.sh
 
       # The post_deploy hook is run after the app container has been started and after it has started accepting requests.
       # More information: https://docs.upsun.com/create-apps/hooks/hooks-comparison.html#deploy-hook
