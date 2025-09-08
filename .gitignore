@@ -4,3 +4,5 @@
 /node_modules
 /.ddev/.env
 /.drush
+/.mcp.json
+/.global
