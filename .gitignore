@@ -6,3 +6,4 @@
 /.drush
 /.mcp.json
 /.global
+/.ddev/.env*
