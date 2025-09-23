@@ -14,6 +14,7 @@ if (getenv('PLATFORM_PROJECT') != "") {
     }
     $settings['trusted_host_patterns'] = [
       'platformsh\.site$',
-      'thefays.us$',
+      'ddev\.site',
+      getenv('DDEV_HOSTNAME'),
     ];
 }
