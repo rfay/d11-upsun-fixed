@@ -26,10 +26,10 @@ if (getenv('PLATFORM_PROJECT') != "") {
     $settings['memcache']['servers'] = [ $memcache_server => 'default'];
     $settings['memcache']['bins'] = ['default' => 'default'];
     $settings['memcache']['key_prefix'] = '';
-    $settings['cache']['default'] = 'cache.backend.memcache';
+    $settings['cache']['default'] = 'cache.backend.memory';
 
     $settings['cache']['bins']['bootstrap'] = 'cache.backend.redis';
     $settings['cache']['bins']['config'] = 'cache.backend.redis';
-    $settings['cache']['bins']['render'] = 'cache.backend.memcache';
-    $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.memcache';
+    $settings['cache']['bins']['render'] = 'cache.backend.memory';
+    $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.memory';
 }
