@@ -17,4 +17,19 @@ if (getenv('PLATFORM_PROJECT') != "") {
       'ddev\.site',
       getenv('DDEV_HOSTNAME'),
     ];
+
+    // Redis and Memcache settings; just demonstration
+    $settings['redis.connection']['host'] = getenv('CACHE_HOST');
+    $settings['redis.connection']['port'] = getenv('CACHE_PORT');
+
+    $memcache_server = getenv('MEMORY_HOST') . ":" . getenv('MEMORY_PORT');
+    $settings['memcache']['servers'] = [ $memcache_server => 'default'];
+    $settings['memcache']['bins'] = ['default' => 'default'];
+    $settings['memcache']['key_prefix'] = '';
+    $settings['cache']['default'] = 'cache.backend.memcache';
+
+    $settings['cache']['bins']['bootstrap'] = 'cache.backend.redis';
+    $settings['cache']['bins']['config'] = 'cache.backend.redis';
+    $settings['cache']['bins']['render'] = 'cache.backend.memcache';
+    $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.memcache';
 }
