@@ -22,6 +22,7 @@
         "drupal/core-recommended": "^11.0",
         "drupal/memcache": "^2.7",
         "drupal/redis": "^1.10",
+        "drupal/search_api_opensearch": "^2.4",
         "drupal/search_api_solr": "^4.3",
         "drush/drush": "^13.6",
         "platformsh/config-reader": "^3.0"
