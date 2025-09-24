@@ -19,6 +19,7 @@ if (getenv('PLATFORM_PROJECT') != "") {
     ];
 
     // Redis and Memcache settings; just demonstration
+    $settings['redis.connection']['interface'] = 'PhpRedis';
     $settings['redis.connection']['host'] = getenv('CACHE_HOST');
     $settings['redis.connection']['port'] = getenv('CACHE_PORT');
 
@@ -28,8 +29,12 @@ if (getenv('PLATFORM_PROJECT') != "") {
     $settings['memcache']['key_prefix'] = '';
     $settings['cache']['default'] = 'cache.backend.memory';
 
-    $settings['cache']['bins']['bootstrap'] = 'cache.backend.redis';
-    $settings['cache']['bins']['config'] = 'cache.backend.redis';
     $settings['cache']['bins']['render'] = 'cache.backend.memory';
     $settings['cache']['bins']['dynamic_page_cache'] = 'cache.backend.memory';
+
+    #if (class_exists(\Drupal\redis\Cache\CacheBackendFactory::class)) {
+      $settings['cache']['bins']['bootstrap'] = 'cache.backend.redis';
+      $settings['cache']['bins']['config'] = 'cache.backend.redis';
+    #}
+
 }
