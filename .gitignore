@@ -7,3 +7,4 @@
 /.mcp.json
 /.global
 /.ddev/.env*
+/.claude/settings.local.json
