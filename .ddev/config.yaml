@@ -12,10 +12,9 @@ fail_on_hook_fail: true
 hooks:
     post-start:
         - composer: install
-dbimage_extra_packages: [sudo]
 use_dns_when_possible: true
 composer_version: "2"
 web_environment:
-    - PLATFORM_PROJECT=ct5b4hzofqk52
+    - PLATFORM_PROJECT=TODO
     - PLATFORM_ENVIRONMENT=main
 corepack_enable: true
