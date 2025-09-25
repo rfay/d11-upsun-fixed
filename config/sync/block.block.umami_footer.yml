@@ -1,4 +1,4 @@
-uuid: 16108d53-1a76-4176-83eb-18464ab2161c
+uuid: 270c2535-a2a8-4691-b2e0-4497f91392cd
 langcode: en
 status: true
 dependencies:
@@ -9,7 +9,7 @@ dependencies:
   theme:
     - umami
 _core:
-  default_config_hash: 9SflLKjOukDutHBBc0A8bldXeitoSFwFyezQoYqiQxI
+  default_config_hash: sTx6pzcFymnOuW6kLZJMcv_VBIJ65Yn8cb8mHugAPIs
 id: umami_footer
 theme: umami
 region: footer
