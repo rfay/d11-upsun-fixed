@@ -866,6 +866,11 @@ if (getenv('PLATFORM_PROJECT_ENTROPY') != "") {
   include __DIR__ . '/settings.upsun.php';
 }
 
+// Automatic Platform.sh settings.
+if (file_exists($app_root . '/' . $site_path . '/settings.platformsh.php')) {
+  include $app_root . '/' . $site_path . '/settings.platformsh.php';
+}
+
 /**
  * Load local development override configuration, if available.
  *
@@ -884,7 +889,3 @@ if (getenv('PLATFORM_PROJECT_ENTROPY') != "") {
 #   include $app_root . '/' . $site_path . '/settings.local.php';
 # }
 
-// Include settings required for Redis cache.
-if ((file_exists(__DIR__ . '/settings.ddev.redis.php') && getenv('IS_DDEV_PROJECT') == 'true')) {
-  include __DIR__ . '/settings.ddev.redis.php';
-}
